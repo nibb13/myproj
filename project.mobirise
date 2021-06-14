@@ -56,7 +56,7 @@
     "cookiesAlert": false,
     "gdpr": false,
     "global_header_custom": "\n<link rel=\"stylesheet\" type=\"text/css\" href=\"tooltip.css\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"tooltipster/dist/css/tooltipster.bundle.min.css\" />\n<link rel=\"stylesheet\" type=\"text/css\" href=\"tooltipster/dist/css/plugins/tooltipster/sideTip/themes/tooltipster-sideTip-shadow.min.css\" />\n",
-    "uniqCompNum": 19,
+    "uniqCompNum": 37,
     "versionPublish": "4.12.4",
     "screenshot": "screenshot.png",
     "global_footer_custom": "    <script type=\"text/javascript\" src=\"tooltipster/dist/js/tooltipster.bundle.min.js\"></script>\n\n\t<script>\n        $(document).ready(function() {\n\t\t$('.tooltipster').tooltipster({\n          delay: 100,\n          maxWidth: 500,\n          speed: 300,\n          interactive: true,\n          \n        animation: 'grow',\n        trigger: 'click',\n\t\ttheme: 'tooltipster-shadow'\n\t\t});\n        });\n    </script>"
@@ -72,6 +72,431 @@
         "html_before": ""
       },
       "components": [
+        {
+          "alias": false,
+          "_styles": {
+            ".navbar": {
+              "background": "@menuBgColor",
+              "transition": "none",
+              "min-height": "77px",
+              "padding": ".5rem 0"
+            },
+            ".navbar-dropdown.bg-color.transparent.opened": {
+              "background": "@menuBgColor"
+            },
+            "a": {
+              "font-style": "normal"
+            },
+            ".nav-item": {
+              "& span": {
+                "padding-right": "0.4em",
+                "line-height": "0.5em",
+                "vertical-align": "text-bottom",
+                "position": "relative",
+                "text-decoration": "none"
+              },
+              "& a": {
+                "display": "-webkit-flex",
+                "align-items": "center",
+                "justify-content": "center",
+                "padding": "0.7rem 0 !important",
+                "margin": "0rem .65rem !important",
+                "-webkit-align-items": "center",
+                "-webkit-justify-content": "center"
+              }
+            },
+            ".nav-item:focus, .nav-link:focus": {
+              "outline": "none"
+            },
+            ".btn": {
+              "padding": "0.4rem 1.5rem",
+              "display": "-webkit-inline-flex",
+              "align-items": "center",
+              "-webkit-align-items": "center",
+              ".mbr-iconfont": {
+                "font-size": "1.6rem"
+              }
+            },
+            ".menu-logo": {
+              "margin-right": "auto",
+              ".navbar-brand": {
+                "display": "flex",
+                "margin-left": "5rem",
+                "padding": "0",
+                "transition": "padding .2s",
+                "min-height": "3.8rem",
+                "-webkit-align-items": "center",
+                "align-items": "center",
+                ".navbar-caption-wrap": {
+                  "display": "flex",
+                  "-webkit-align-items": "center",
+                  "align-items": "center",
+                  "word-break": "break-word",
+                  "min-width": "7rem",
+                  "margin": ".3rem 0",
+                  ".navbar-caption": {
+                    "line-height": "1.2rem !important",
+                    "padding-right": "2rem"
+                  }
+                },
+                ".navbar-logo": {
+                  "font-size": "4rem",
+                  "transition": "font-size 0.25s",
+                  "& img": {
+                    "display": "flex"
+                  },
+                  ".mbr-iconfont": {
+                    "transition": "font-size 0.25s"
+                  },
+                  "a": {
+                    "display": "inline-flex"
+                  }
+                }
+              }
+            },
+            ".navbar-toggleable-sm .navbar-collapse": {
+              "justify-content": "flex-end",
+              "-webkit-justify-content": "flex-end",
+              "padding-right": "5rem",
+              "width": "auto",
+              ".navbar-nav": {
+                "flex-wrap": "wrap",
+                "-webkit-flex-wrap": "wrap",
+                "padding-left": "0",
+                ".nav-item": {
+                  "-webkit-align-self": "center",
+                  "align-self": "center"
+                }
+              },
+              ".navbar-buttons": {
+                "padding-left": "0",
+                "padding-bottom": "0"
+              }
+            },
+            ".dropdown": {
+              ".dropdown-menu": {
+                "background": "@menuBgColor",
+                "visibility": "hidden",
+                "display": "block",
+                "position": "absolute",
+                "min-width": "5rem",
+                "padding-top": "1.4rem",
+                "padding-bottom": "1.4rem",
+                "text-align": "left",
+                ".dropdown-item": {
+                  "width": "auto",
+                  "padding": "0.235em 1.5385em 0.235em 1.5385em !important",
+                  "&::after": {
+                    "right": "0.5rem"
+                  }
+                },
+                ".dropdown-submenu": {
+                  "margin": "0"
+                }
+              },
+              "&.open > .dropdown-menu": {
+                "visibility": "visible"
+              }
+            },
+            ".navbar-toggleable-sm": {
+              "&.opened:after": {
+                "position": "absolute",
+                "width": "100vw",
+                "height": "100vh",
+                "content": "''",
+                "background-color": "rgba(0, 0, 0, 0.1)",
+                "left": "0",
+                "bottom": "0",
+                "transform": "translateY(100%)",
+                "-webkit-transform": "translateY(100%)",
+                "z-index": "1000"
+              }
+            },
+            ".navbar.navbar-short": {
+              "min-height": "60px",
+              "transition": "all .2s",
+              "& .navbar-toggler-right": {
+                "top": "20px"
+              },
+              "& .navbar-logo a": {
+                "font-size": "2.5rem !important",
+                "line-height": "2.5rem",
+                "transition": "font-size 0.25s",
+                "& .mbr-iconfont": {
+                  "font-size": "2.5rem !important"
+                },
+                "& img": {
+                  "height": "3rem !important"
+                }
+              },
+              "& .navbar-brand": {
+                "min-height": "3rem"
+              }
+            },
+            "button.navbar-toggler": {
+              "width": "31px",
+              "height": "18px",
+              "cursor": "pointer",
+              "transition": "all .2s",
+              "top": "1.5rem",
+              "right": "1rem",
+              "&:focus": {
+                "outline": "none"
+              },
+              ".hamburger span": {
+                "position": "absolute",
+                "right": "0",
+                "width": "30px",
+                "height": "2px",
+                "border-right": "5px",
+                "background-color": "@hamburgerColor",
+                "&:nth-child(1)": {
+                  "top": "0",
+                  "transition": "all .2s"
+                },
+                "&:nth-child(2)": {
+                  "top": "8px",
+                  "transition": "all .15s"
+                },
+                "&:nth-child(3)": {
+                  "top": "8px",
+                  "transition": "all .15s"
+                },
+                "&:nth-child(4)": {
+                  "top": "16px",
+                  "transition": "all .2s"
+                }
+              }
+            },
+            "nav.opened .hamburger span": {
+              "&:nth-child(1)": {
+                "top": "8px",
+                "width": "0",
+                "opacity": "0",
+                "right": "50%",
+                "transition": "all .2s"
+              },
+              "&:nth-child(2)": {
+                "-webkit-transform": "rotate(45deg)",
+                "transform": "rotate(45deg)",
+                "transition": "all .25s"
+              },
+              "&:nth-child(3)": {
+                "-webkit-transform": "rotate(-45deg)",
+                "transform": "rotate(-45deg)",
+                "transition": "all .25s"
+              },
+              "&:nth-child(4)": {
+                "top": "8px",
+                "width": "0",
+                "opacity": "0",
+                "right": "50%",
+                "transition": "all .2s"
+              }
+            },
+            ".collapsed": {
+              "&.navbar-expand": {
+                "flex-direction": "column",
+                "-webkit-flex-direction": "column"
+              },
+              ".btn": {
+                "display": "-webkit-flex"
+              },
+              ".navbar-collapse": {
+                "display": "none !important",
+                "padding-right": "0 !important",
+                "&.collapsing,&.show": {
+                  "display": "block !important",
+                  ".navbar-nav": {
+                    "display": "block",
+                    "text-align": "center",
+                    ".nav-item": {
+                      "clear": "both",
+                      "& when (@showButtons = false)": {
+                        "&:last-child": {
+                          "margin-bottom": "1rem"
+                        }
+                      }
+                    }
+                  },
+                  ".navbar-buttons": {
+                    "text-align": "center",
+                    "&:last-child": {
+                      "margin-bottom": "1rem"
+                    }
+                  }
+                }
+              },
+              "@media (min-width: 1024px)": {
+                "&:not(.navbar-short) .navbar-collapse when (@showLogo)": {
+                  "max-height": "~\"calc(98.5vh - @{logoSize}rem)\""
+                }
+              },
+              "button.navbar-toggler": {
+                "display": "block"
+              },
+              ".navbar-brand": {
+                "margin-left": "1rem !important"
+              },
+              ".navbar-toggleable-sm": {
+                "flex-direction": "column",
+                "-webkit-flex-direction": "column"
+              },
+              ".dropdown": {
+                ".dropdown-menu": {
+                  "width": "100%",
+                  "text-align": "center",
+                  "position": "relative",
+                  "opacity": "0",
+                  "overflow": "hidden",
+                  "display": "block",
+                  "height": "0",
+                  "visibility": "hidden",
+                  "padding": "0",
+                  "transition-duration": ".5s",
+                  "transition-property": "opacity,padding,height"
+                },
+                "&.open > .dropdown-menu": {
+                  "position": "relative",
+                  "opacity": "1",
+                  "height": "auto",
+                  "padding": "1.4rem 0",
+                  "visibility": "visible"
+                },
+                ".dropdown-submenu": {
+                  "left": "0",
+                  "text-align": "center",
+                  "width": "100%"
+                },
+                ".dropdown-toggle[data-toggle=\"dropdown-submenu\"]::after": {
+                  "margin-top": "0",
+                  "position": "inherit",
+                  "right": "0",
+                  "top": "50%",
+                  "display": "inline-block",
+                  "width": "0",
+                  "height": "0",
+                  "margin-left": ".3em",
+                  "vertical-align": "middle",
+                  "content": "\"\"",
+                  "border-top": ".30em solid",
+                  "border-right": ".30em solid transparent",
+                  "border-left": ".30em solid transparent"
+                }
+              }
+            },
+            "@media (max-width: 1023px)": {
+              "&.navbar-expand": {
+                "flex-direction": "column",
+                "-webkit-flex-direction": "column"
+              },
+              "img": {
+                "height": "3.8rem !important"
+              },
+              ".btn": {
+                "display": "-webkit-flex"
+              },
+              "button.navbar-toggler": {
+                "display": "block"
+              },
+              ".navbar-brand": {
+                "margin-left": "1rem !important"
+              },
+              ".navbar-toggleable-sm": {
+                "flex-direction": "column",
+                "-webkit-flex-direction": "column"
+              },
+              ".navbar-collapse": {
+                "display": "none !important",
+                "padding-right": "0 !important",
+                "&.collapsing,&.show": {
+                  "display": "block !important",
+                  ".navbar-nav": {
+                    "display": "block",
+                    "text-align": "center",
+                    ".nav-item": {
+                      "clear": "both",
+                      "& when (@showButtons = false)": {
+                        "&:last-child": {
+                          "margin-bottom": "1rem"
+                        }
+                      }
+                    }
+                  },
+                  ".navbar-buttons": {
+                    "text-align": "center",
+                    "&:last-child": {
+                      "margin-bottom": "1rem"
+                    }
+                  }
+                }
+              },
+              ".dropdown": {
+                ".dropdown-menu": {
+                  "width": "100%",
+                  "text-align": "center",
+                  "position": "relative",
+                  "opacity": "0",
+                  "overflow": "hidden",
+                  "display": "block",
+                  "height": "0",
+                  "visibility": "hidden",
+                  "padding": "0",
+                  "transition-duration": ".5s",
+                  "transition-property": "opacity,padding,height"
+                },
+                "&.open > .dropdown-menu": {
+                  "position": "relative",
+                  "opacity": "1",
+                  "height": "auto",
+                  "padding": "1.4rem 0",
+                  "visibility": "visible"
+                },
+                ".dropdown-submenu": {
+                  "left": "0",
+                  "text-align": "center",
+                  "width": "100%"
+                },
+                ".dropdown-toggle[data-toggle=\"dropdown-submenu\"]::after": {
+                  "margin-top": "0",
+                  "position": "inherit",
+                  "right": "0",
+                  "top": "50%",
+                  "display": "inline-block",
+                  "width": "0",
+                  "height": "0",
+                  "margin-left": ".3em",
+                  "vertical-align": "middle",
+                  "content": "\"\"",
+                  "border-top": ".30em solid",
+                  "border-right": ".30em solid transparent",
+                  "border-left": ".30em solid transparent"
+                }
+              }
+            },
+            "@media (min-width: 767px)": {
+              ".menu-logo": {
+                "flex-shrink": "0",
+                "-webkit-flex-shrink": "0"
+              }
+            },
+            ".navbar-collapse": {
+              "flex-basis": "auto",
+              "-webkit-flex-basis": "auto"
+            },
+            ".nav-link:hover, .dropdown-item:hover": {
+              "color": "@itemsHoverColor !important"
+            }
+          },
+          "_name": "menu2",
+          "_customHTML": "<section class=\"menu\" group=\"Menu\" plugins=\"DropDown, TouchSwipe\" always-top global not-draggable once=\"menu\" position-absolute>\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Show Logo\" name=\"showLogo\">\n        <input type=\"range\" title=\"Logo Size\" inline name=\"logoSize\" min=\"3.8\" max=\"8\" step=\"0.1\" value=\"3.8\" condition=\"showLogo\">\n        <input type=\"checkbox\" title=\"Show Brand Name\" name=\"showBrand\">\n        <input type=\"checkbox\" title=\"Show Menu Items\" name=\"showItems\" checked>\n        <input type=\"color\" title=\"Items Hover Color\" name=\"itemsHoverColor\" value=\"#767676\" condition=\"showItems\">\n        <input type=\"checkbox\" title=\"Show Button(s)\" name=\"showButtons\">\n        <input type=\"checkbox\" title=\"Sticky\" name=\"sticky\" checked>\n        <input type=\"checkbox\" title=\"Collapsed\" name=\"collapsed\">\n        <input type=\"checkbox\" title=\"Transparent\" name=\"transparent\">\n        <input type=\"color\" title=\"Hamburger Color\" name=\"hamburgerColor\" value=\"#333333\">\n        <input type=\"color\" title=\"Background Color\" name=\"menuBgColor\" value=\"#cebfaf\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <nav class=\"navbar navbar-expand beta-menu navbar-dropdown align-items-center\" mbr-class=\"{\n        'navbar-fixed-top': sticky,\n        'navbar-toggleable-sm': !collapsed,\n        'collapsed': collapsed,\n        'bg-color transparent': transparent\n        }\">\n        <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\" aria-controls=\"navbarSupportedContent\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n            <div class=\"hamburger\">\n                <span></span>\n                <span></span>\n                <span></span>\n                <span></span>\n            </div>\n        </button>\n        <div class=\"menu-logo\">\n            <div class=\"navbar-brand\">\n                <span mbr-if=\"showLogo\" class=\"navbar-logo\">\n                    <a href=\"https://mobirise.co\">\n                        <img src=\"../_images/logo2.png\" alt=\"Mobirise\" mbr-style=\"{'height': logoSize + 'rem'}\">\n                    </a>\n                </span>\n                <span mbr-if=\"showBrand\" mbr-buttons mbr-theme-style=\"display-4\" class=\"navbar-caption-wrap\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd,-mbrBtnRemove\">\n                    <a class=\"navbar-caption text-black\" data-app-selector=\".navbar-caption\" href=\"https://mobirise.co\">\n                        MOBIRISE\n                    </a>\n                </span>\n            </div>\n        </div>\n        <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n            <ul mbr-if=\"showItems\" mbr-menu class=\"navbar-nav nav-dropdown\" mbr-theme-style=\"display-4\" mbr-class=\"{'nav-right': !showButtons,\n                'navbar-nav-top-padding': isPublish && !showBrand && !showLogo}\"><li class=\"nav-item\">\n                    <a class=\"nav-link link text-black\" href=\"index.html#slider1-b\" data-app-selector=\".nav-link,.dropdown-item\" data-app-placeholder=\"Type Text\">\n                        1. Опитування</a>\n                </li><li class=\"nav-item dropdown\">\n                    <a class=\"nav-link link text-black dropdown-toggle\" href=\"index.html#header1-g\" data-app-selector=\".nav-link,.dropdown-item\" data-app-placeholder=\"Type Text\" data-toggle=\"dropdown-submenu\" aria-expanded=\"false\">\n                        2. Concert of Europe</a><div class=\"dropdown-menu\"><a class=\"text-black dropdown-item\" href=\"index.html#header1-g\" data-app-selector=\".nav-link,.dropdown-item\" data-app-placeholder=\"Type Text\">2.1 Інтро</a><a class=\"text-black dropdown-item\" href=\"index.html#content9-h\" data-app-selector=\".nav-link,.dropdown-item\" data-app-placeholder=\"Type Text\">2.2 Ессе</a><a class=\"text-black dropdown-item\" href=\"index.html#custom-html-s\" data-app-selector=\".nav-link,.dropdown-item\" data-app-placeholder=\"Type Text\">2.3 Що єднає Европу?</a></div>\n                </li></ul>\n            <div mbr-if=\"showButtons\" mbr-buttons mbr-theme-style=\"display-4\" class=\"navbar-buttons mbr-section-btn\">\n                <a class=\"btn btn-sm btn-primary\" href=\"tel:+1-234-567-8901\">\n                    <span class=\"btn-icon mbri-mobile mbr-iconfont mbr-iconfont-btn\" data-app-selector=\".mbr-iconfont-btn\">\n                    </span>\n                    +1-234-567-8901\n                </a>\n            </div>\n        </div>\n    </nav>\n</section>",
+          "_cid": "sAiJZkDHW5",
+          "_anchor": "menu2-j",
+          "_protectedParams": [],
+          "_global": true,
+          "_once": "menu",
+          "_params": {}
+        },
         {
           "alias": false,
           "_styles": {
@@ -677,7 +1102,7 @@
             }
           },
           "_name": "header1",
-          "_customHTML": "<section class=\"header1\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n        <input type=\"checkbox\" title=\"Show Arrow\" name=\"showArrow\" checked>\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/background4.jpg\" parallax selected>\n            <input type=\"color\" title=\"Background Color\" value=\"#7f1933\">\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#302b24\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div class=\"container\">\n        <div class=\"row justify-content-md-center\">\n            <div class=\"mbr-white col-md-10\">\n                <h1 class=\"mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\">Concert of Europe</h1>\n                <h3 class=\"mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showSubTitle\"><i>\"The construction of Europe is an art. It is the art of the possible.\"</i>\n<div>Jacques René Chirac\n</div><div><br></div></h3>\n                <p class=\"mbr-text align-center pb-3 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\"></p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Що значить бути європейцем? На таке питання мені пропонували відповісти твором обсягом в 2 сторінки. Це був один з критерії подання на програму для студентів з України, аби провчитись семестр в Карловому університеті. Це був 2018 рік, я закрив сесію за перший перший курс й мені кортіло виграти. Тож швидко зібрав потрібні для подання документи й сів за написання тексту. Ці 2 сторінки так і не були написані.</p><p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Що ж пішло не так? Не було “проблеми білого листа”, тоді я радше був графоманом й підробляв копійчину райтингом. Тезово вкластись в потрібний обсяг теж не проблема, радше цікавий виклик. Складно було відповісти на питання. Досвід шабашок підказував, що потрібно було просто “народити” ідеологічно вірний текст та сподіватись на вдачу. Але я вирішив, що таких “розумних” творів буде безліч і варто “йти своїм шляхом”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Я тиждень читав про євроінтеграцію та цивілізаційний вибір, цінності демократії та важливість реформ. Зібрав колекцію схожих за змістом текстів й відкрив для себе багато дійсно цікавих та розумних людей. Але не знайшов відповіді. Дедлайн горів, тож після мозкового штурму я сів за ноутбук та з великим болем написав свою першу серйозну аналітику. На наступний ранок “геніальний” текст було прочитано вдруге й видалено.</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Здавалося б, дуже легко дати відповідь на таке просте питання. П’ять людей точно впорались. Мене згубило бажання дати правильну відповідь. Розкрити питання цілком й вмістити істину в потрібну кількість знаків. І зробити все це зрозумілою мовою. В 18 років це здавалося цілком досяжно. Честно кажучи, я й зараз не розгубив цієї наївності. Отже, спроба друга.<br>\n                </p><p></p>\n                <div class=\"mbr-section-btn align-center\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-4\"><a class=\"btn btn-md btn-secondary\" href=\"https://mobirise.co\" data-app-placeholder=\"Type Text\">\n                        <span class=\"mbr-iconfont mbri-file\"></span>LEARN MORE</a></div>\n            </div>\n        </div>\n    </div>\n      <div mbr-if=\"showArrow\" class=\"mbr-arrow hidden-sm-down\" aria-hidden=\"true\">\n        <a href=\"#next\">\n            <i class=\"mbri-down mbr-iconfont\"></i>\n        </a>\n    </div>\n\n</section>",
+          "_customHTML": "<section class=\"header1\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n        <input type=\"checkbox\" title=\"Show Arrow\" name=\"showArrow\" checked>\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/europemap.jpg\" parallax selected>\n            <input type=\"color\" title=\"Background Color\" value=\"#7f1933\">\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#302b24\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div class=\"container\">\n        <div class=\"row justify-content-md-center\">\n            <div class=\"mbr-white col-md-10\">\n                <h1 class=\"mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\">Concert of Europe</h1>\n                <h3 class=\"mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showSubTitle\"><i>\"The construction of Europe is an art. It is the art of the possible.\"</i>\n<div>Jacques René Chirac\n</div><div><br></div></h3>\n                <p class=\"mbr-text align-center pb-3 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\"></p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Що значить бути європейцем? На таке питання мені пропонували відповісти твором обсягом в 2 сторінки. Це був один з критерії подання на програму для студентів з України, аби провчитись семестр в Карловому університеті. Це був 2018 рік, я закрив сесію за перший перший курс й мені кортіло виграти. Тож швидко зібрав потрібні для подання документи й сів за написання тексту. Ці 2 сторінки так і не були написані.</p><p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Що ж пішло не так? Не було “проблеми білого листа”, тоді я радше був графоманом й підробляв копійчину райтингом. Тезово вкластись в потрібний обсяг теж не проблема, радше цікавий виклик. Складно було відповісти на питання. Досвід шабашок підказував, що потрібно було просто “народити” ідеологічно вірний текст та сподіватись на вдачу. Але я вирішив, що таких “розумних” творів буде безліч і варто “йти своїм шляхом”</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Я тиждень читав про євроінтеграцію та цивілізаційний вибір, цінності демократії та важливість реформ. Зібрав колекцію схожих за змістом текстів й відкрив для себе багато дійсно цікавих та розумних людей. Але не знайшов відповіді. Дедлайн горів, тож після мозкового штурму я сів за ноутбук та з великим болем написав свою першу серйозну аналітику. На наступний ранок “геніальний” текст було прочитано вдруге й видалено.</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Здавалося б, дуже легко дати відповідь на таке просте питання. П’ять людей точно впорались. Мене згубило бажання дати правильну відповідь. Розкрити питання цілком й вмістити істину в потрібну кількість знаків. І зробити все це зрозумілою мовою. В 18 років це здавалося цілком досяжно. Честно кажучи, я й зараз не розгубив цієї наївності. Отже, спроба друга.<br>\n                </p><p></p>\n                <div class=\"mbr-section-btn align-center\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-4\"><a class=\"btn btn-md btn-secondary\" href=\"https://mobirise.co\" data-app-placeholder=\"Type Text\">\n                        <span class=\"mbr-iconfont mbri-file\"></span>LEARN MORE</a></div>\n            </div>\n        </div>\n    </div>\n      <div mbr-if=\"showArrow\" class=\"mbr-arrow hidden-sm-down\" aria-hidden=\"true\">\n        <a href=\"#next\">\n            <i class=\"mbri-down mbr-iconfont\"></i>\n        </a>\n    </div>\n\n</section>",
           "_cid": "sAigeucMzI",
           "_anchor": "header1-g",
           "_protectedParams": [],
@@ -743,9 +1168,695 @@
             }
           },
           "_name": "content9",
-          "_customHTML": "<section class=\"mbr-section article content9\" group=\"Article\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Text Width\" name=\"innerWidth\" min=\"50\" max=\"100\" step=\"1\" value=\"100\">\n        <input type=\"range\" inline title=\"Line Width\" name=\"lineLength\" min=\"10\" max=\"100\" step=\"1\" value=\"66\">\n        <input type=\"color\" title=\"Line Color\" name=\"lineColor\" value=\"#7395a1\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#cebfaf\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"inner-container\" mbr-style=\"{'width': innerWidth + '%'}\">\n            <hr class=\"line\" mbr-style=\"{'width': lineLength + '%'}\">\n            <div class=\"section-text align-center mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".section-text\" mbr-text><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В творі англійського математика <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip1\">Чарльза Латвіджа Доджсо</span> “Аліса в Країні Див” є чудова цитата: “Потрібно бігти з усіх ніг, щоб тільки залишатися на місці, а щоб кудись потрапити, треба бігти хоча б удвічі швидше!”. Через подібну призму слід дивитись й на питання європейської ідентичності. Не треба думати, що значить бути європейцем. Достатньо просто “бути”. І дивитись по сторонах. Адже, як казав Маркс, <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip2\">буття визначає свідомість</span>. Оточення людини здатне розповісти про неї значно більше, ніж вона сама. Тому в роздумах про європейця його слід забути. І розмислити Європу.</p><p><span style=\"font-size: 1rem;\">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span><span style=\"font-size: 1rem;\">Перше, що приходить до голови, це метафора картини. Не <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip3\">“Викрадення Європи”</span>, а епічний французький <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip4\">гобелен</span>. Розміром своїм настільки великий, що його вмістить хіба що зала <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip5\">Лувру</span>. Нитки цього килиму сшивають докупи безліч клаптиків сюжетів, персональних історій, портретів, ілюструють події. Вони явно містять якісь таємні смисли. Попри свою строкатість полотно сприймається напрочуд цілісним.&nbsp;</span></p><p></p><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Якби навпроти цієї картини невідомого автора сидів <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip6\">Мішель Фуко</span>, то після годин роздивляння зображеного він би напевно сказав, що така “Європа” - це чудова, глобальна ілюстрація до його концепції <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip7\">гетеротопії</span>. <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip8\">Ролан Барт</span>, склади він компанію Фуко, міг би додати, що назву слід змінити на “Європи”. Адже вони, насправді, розглядають вельми оригінальний <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip9\">поліптих</span>. Якби до виставочної зали з гобеленом зайшов <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip10\">Джордж Стайнер</span>, то напевно <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip11\">процитував</span> би другого президента України. Походивши вздовж зображень він би тільки переконався, що все це описано в його есеї “Ідея Європи”. Приблизно те саме зробив би <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip12\">Норман Дейвіс</span>, тільки в його випадку картина ілюструвала би книгу “Європа: Історія”.</div><p></p><p></p><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<span style=\"font-size: 1rem;\">Цей процес був би нескінченним: кожен новий відвідувач знаходив би на полотні щось своє чи напрочуд близьке. Всі присутні обговорювали би роботу невідомого майстра та все нові й нові деталі, які б помічало уважне, незамилине око новоприбулого. Аж поки один з присутніх, хай це буде філософ <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip13\">Едмунд Гуссерль</span>, не замислився б над цим. І не помітив би за собою дивний факт. Як далеко би він не відходив, йому все одно не вдається повністю охопити полотно своїм зором. І як би близько він не підходив, роздивитись метр квадратний картини цілком також не виходить.</span></div><p></p><p></p><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<span style=\"font-size: 1rem;\">В цьому головна проблема сприйняття Європи. Вона занадто велика за розміром та глибока за суттю. Історія цього <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip14\">простору</span> складає близько трьох тисяч років. За цей час він докорінно змінювався й еволюціонував на рівні поняття. Античний грек, для якого “Європа” позначає західне узбережжя Егейського моря, був би дуже здивований одним лише географічним значенням цього слова сьогодні. Європа міфологізована, виведена за раціональні рамки. Вона не більша від нас, радше <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip15\">Вона понад нами</span>. Це вкрай важливо усвідомити для того, аби почати розуміти цей простір. Європейська ідентичність не створює Європу, а навпаки - <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip16\">Вона твориться нею</span>.</span></div><p></p></div>\n            <hr class=\"line\" mbr-style=\"{'width': lineLength + '%'}\">\n        </div>\n        </div>\n  \n  <!-- Annotations -->\n  \n  <div class=\"tooltip_templates\">\n    <span id=\"tooltip1\">\n      Також відомий як пісьменник <a href=\"https://uk.wikipedia.org/wiki/%D0%9B%D1%8C%D1%8E%D1%97%D1%81_%D0%9A%D0%B5%D1%80%D1%80%D0%BE%D0%BB\" target=\"_blank\">Льюїс Керрол</a><br><br>\n      <img style=\"display:block;margin:auto;\" alt=\"Lewis Carroll 1863.jpg\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Lewis_Carroll_1863.jpg/250px-Lewis_Carroll_1863.jpg\" decoding=\"async\" srcset=\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Lewis_Carroll_1863.jpg/375px-Lewis_Carroll_1863.jpg 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Lewis_Carroll_1863.jpg/500px-Lewis_Carroll_1863.jpg 2x\" data-file-width=\"1069\" data-file-height=\"1627\" width=\"250\" height=\"380\">\n    </span>\n    \n    <span id=\"tooltip2\">\n      Маркс (???)\n    </span>\n    \n    <span id=\"tooltip3\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%92%D0%B8%D0%BA%D1%80%D0%B0%D0%B4%D0%B5%D0%BD%D0%BD%D1%8F_%D0%84%D0%B2%D1%80%D0%BE%D0%BF%D0%B8_(%D0%A0%D0%B5%D0%BC%D0%B1%D1%80%D0%B0%D0%BD%D0%B4%D1%82)\" target=\"_blank\">Викрадення Європи</a> (нід. De roof van Europa) — картина голландського художника Рембрандта Харменса ван Рейна, що була створена в 1632 році. За основу взятий сюжет з поеми «Ідилія» давньогрецького поета, майстра буколічної поезії Мосха. Картина під інвентарним номером 95.PB.7 наразі зберігається в музеї Ґетті у Лос-Анджелесі.<br><br>\n      <img style=\"display:block;margin:auto;\" alt=\"Rembrandt Abduction of Europa.jpg\" src=\"https:////upload.wikimedia.org/wikipedia/commons/thumb/5/56/Rembrandt_Abduction_of_Europa.jpg/250px-Rembrandt_Abduction_of_Europa.jpg\" decoding=\"async\" srcset=\"https:////upload.wikimedia.org/wikipedia/commons/thumb/5/56/Rembrandt_Abduction_of_Europa.jpg/375px-Rembrandt_Abduction_of_Europa.jpg 1.5x, https:////upload.wikimedia.org/wikipedia/commons/thumb/5/56/Rembrandt_Abduction_of_Europa.jpg/500px-Rembrandt_Abduction_of_Europa.jpg 2x\" data-file-width=\"7000\" data-file-height=\"5461\" width=\"250\" height=\"195\">\n    </span>\n    \n    <span id=\"tooltip4\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%93%D0%BE%D0%B1%D0%B5%D0%BB%D0%B5%D0%BD\" target=\"_blank\">Гобеле́н</a> (фр. gobelin) — один із різновидів декоративно-ужиткового мистецтва, стінний безворсовий килим із сюжетною або орнаментною композицією, витканий вручну перехресним переплетенням ниток. Гобелени виготовляють із кольорових шовкових і/або шерстяних ниток окремими частинами, які потім зшивають між собою (часто окремі колірні плями).\n    </span>\n    \n    <span id=\"tooltip5\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%9B%D1%83%D0%B2%D1%80\" target=\"_blank\">Музе́й Лу́вру</a> (фр. Musée du Louvre) — один з найбільших музеїв світу, розташований на правому березі Сени в першому окрузі Парижа. Музей було відкрито 1793 року під назвою Центрального музею мистецтв Республіки. \n    </span>\n    \n    <span id=\"tooltip6\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%9C%D1%96%D1%88%D0%B5%D0%BB%D1%8C_%D0%A4%D1%83%D0%BA%D0%BE\" target=\"_blank\">Поль-Міше́ль Фуко́ </a> (фр. Paul-Michel Foucault; 15 жовтня 1926, Пуатьє — 25 червня 1984, Париж) — французький філософ та історик ХХ ст. Мішель Фуко найбільш відомий завдяки своїм критичним дослідженням соціальних інституцій, психіатрії, медицини, наук про людину, системи тюрем, а також завдяки своїм роботам з історії сексуальності. <br><br>\n      <img style=\"display:block;margin:auto;\" alt=\"Michel Foucault 1974 Brasil.jpg\" src=\"https://upload.wikimedia.org/wikipedia/commons/7/76/Michel_Foucault_1974_Brasil.jpg\" decoding=\"async\" data-file-width=\"207\" data-file-height=\"246\" width=\"207\" height=\"246\">\n    </span>\n    \n    <span id=\"tooltip7\">\n      ???<br><br><a href=\"https://uk.wikipedia.org/wiki/%D0%93%D0%B5%D1%82%D0%B5%D1%80%D0%BE%D1%82%D0%BE%D0%BF%D1%96%D1%8F\" target=\"_blank\">Гетеротопія</a> (від грец. гетеро — інший і грец. tópos — місце) — зміна місця закладки і розвитку органу у тварин в процесі їх індивідуального розвитку — онтогенезу; один із шляхів еволюційної перебудови організму. Гетеротопія виникає внаслідок міграції клітин з одного зародкового листка в іншій, зсувів клітин в межах даного зародкового листка або вторинного зсуву органів. Термін введений німецьким дослідником Ернстом Геккелем в 1874 році для позначення порушень філогенетично зумовленої просторової послідовності стадій онтогенезу. Згодом було показано, що гетеротопія не вкладається в гекелівське трактування ценогенезу. \n    </span>\n\n\t<span id=\"tooltip8\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%A0%D0%BE%D0%BB%D0%B0%D0%BD_%D0%91%D0%B0%D1%80%D1%82\" target=\"_blank\">Ро́лан Барт</a> (фр. Roland Barthes; 1915, Шербур-Октевіль — 1980, Париж) — французький філософ, критик і теоретик семіотики, науки про знаки і символи. Один із французьких «нових критиків», представник структуралізму і постструктуралізму. сексуальності. <br><br>\n\t\t<br><br>\n      <img style=\"display:block;margin:auto;\" alt=\"RolandBarthes.jpg\" src=\"https://upload.wikimedia.org/wikipedia/uk/thumb/7/7c/RolandBarthes.jpg/200px-RolandBarthes.jpg\" decoding=\"async\" srcset=\"https://upload.wikimedia.org/wikipedia/uk/thumb/7/7c/RolandBarthes.jpg/300px-RolandBarthes.jpg 1.5x, https://upload.wikimedia.org/wikipedia/uk/7/7c/RolandBarthes.jpg 2x\" data-file-width=\"312\" data-file-height=\"253\" width=\"200\" height=\"162\">\n    </span>\n    \n    <span id=\"tooltip9\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D1%96%D0%BF%D1%82%D0%B8%D1%85\" target=\"_blank\">Поліптих</a> — картина (зазвичай на дерев'яній основі), розділена на секції або дошки. Зокрема, диптих — двосекційний твір мистецтва, триптих — трисекційний, тетраптих або квадриптих розділений на 4 секції, пентаптих — на 5 і так далі. \n    </span>\n\n     <span id=\"tooltip10\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%94%D0%B6%D0%BE%D1%80%D0%B4%D0%B6_%D0%A1%D1%82%D0%B0%D0%B9%D0%BD%D0%B5%D1%80\" target=\"_blank\">Джордж Стайнер</a> (англ. George Steiner, 23 квітня 1929, Париж — 3 лютого 2020, Кембридж) — американський літературознавець, літературний критик, культуролог, філософ, есеїст, педагог та письменник. <br><br>\n\t\t<br><br>\n      <img style=\"display:block;margin:auto;\" alt=\"George Steiner 2013 (cropped).jpg\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/George_Steiner_2013_%28cropped%29.jpg/280px-George_Steiner_2013_%28cropped%29.jpg\" decoding=\"async\" srcset=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/George_Steiner_2013_%28cropped%29.jpg/420px-George_Steiner_2013_%28cropped%29.jpg 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/George_Steiner_2013_%28cropped%29.jpg/560px-George_Steiner_2013_%28cropped%29.jpg 2x\" data-file-width=\"564\" data-file-height=\"696\" width=\"280\" height=\"346\">\n    </span>\n    \n     <span id=\"tooltip11\">\n      Це ж було вже\n    </span>\n    \n    <span id=\"tooltip12\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%9D%D0%BE%D1%80%D0%BC%D0%B0%D0%BD_%D0%94%D0%B5%D0%B9%D0%B2%D1%96%D1%81\" target=\"_blank\">Но́рман Де́йвіс</a> (англ. Ivor Norman Richard Davies; нар. 8 червня 1939, Болтон) — британський історик валлійського походження. Відомий як автор наукових праць з історії Польщі, Європи та Британських островів. <br><br>\n\t\t<br><br>\n      <img style=\"display:block;margin:auto;\" alt=\"Norman Davies by Kubik 02.jpg\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Norman_Davies_by_Kubik_02.jpg/250px-Norman_Davies_by_Kubik_02.jpg\" decoding=\"async\" srcset=\"https://upload.wikimedia.org/wikipedia/commons/0/04/Norman_Davies_by_Kubik_02.jpg 1.5x\" data-file-width=\"360\" data-file-height=\"480\" width=\"250\" height=\"333\">\n    </span>\n    \n    <span id=\"tooltip13\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%95%D0%B4%D0%BC%D1%83%D0%BD%D0%B4_%D0%93%D1%83%D1%81%D1%81%D0%B5%D1%80%D0%BB%D1%8C\" target=\"_blank\">Е́дмунд Ґуста́в Альбре́хт Гу́ссерль</a> (нім. Edmund Gustav Albrecht Husserl; 8 квітня 1859, Простейов, Моравія — 26 квітня 1938, Фрайбург) — німецький філософ, відомий як батько феноменології. Його робота порвала із позитивістською орієнтацією науки і філософії його часу, надаючи ваги суб'єктивному досвіду як джерелу пізнання об'єктивних феноменів. <br><br>\n\t\t<br><br>\n      <img style=\"display:block;margin:auto;\" alt=\"Edmund Husserl 1900.jpg\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Edmund_Husserl_1900.jpg/250px-Edmund_Husserl_1900.jpg\" decoding=\"async\" srcset=\"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Edmund_Husserl_1900.jpg/375px-Edmund_Husserl_1900.jpg 1.5x, https://upload.wikimedia.org/wikipedia/commons/8/8f/Edmund_Husserl_1900.jpg 2x\" data-file-width=\"419\" data-file-height=\"550\" width=\"250\" height=\"328\">\n    </span>\n\n    <span id=\"tooltip14\">\n      Дивись \"<span class=\"note tooltipster\" data-tooltip-content=\"#tooltip7\">Гетеротопія</span>\"\n    </span>\n    \n    <iframe id=\"tooltip15\" width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/NeQM1c-XCDc?start=223\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n    \n    <span id=\"tooltip16\">\n      Дивись \"<span class=\"note tooltipster\" data-tooltip-content=\"#tooltip2\">Буття визначає свідомість</span>\"\n    </span>\n    \n    \n\t</div>\n  \n</section>",
+          "_customHTML": "<section class=\"mbr-section article content9\" group=\"Article\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Text Width\" name=\"innerWidth\" min=\"50\" max=\"100\" step=\"1\" value=\"100\">\n        <input type=\"range\" inline title=\"Line Width\" name=\"lineLength\" min=\"10\" max=\"100\" step=\"1\" value=\"66\">\n        <input type=\"color\" title=\"Line Color\" name=\"lineColor\" value=\"#7395a1\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#cebfaf\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"inner-container\" mbr-style=\"{'width': innerWidth + '%'}\">\n            <hr class=\"line\" mbr-style=\"{'width': lineLength + '%'}\">\n            <div class=\"section-text align-center mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".section-text\" mbr-text><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;В творі англійського математика <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip1\">Чарльза Латвіджа Доджсо</span> “Аліса в Країні Див” є чудова цитата: “Потрібно бігти з усіх ніг, щоб тільки залишатися на місці, а щоб кудись потрапити, треба бігти хоча б удвічі швидше!”. Через подібну призму слід дивитись й на питання європейської ідентичності. Не треба думати, що значить бути європейцем. Достатньо просто “бути”. І дивитись по сторонах. Адже, як казав Маркс, <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip2\">буття визначає свідомість</span>. Оточення людини здатне розповісти про неї значно більше, ніж вона сама. Тому в роздумах про європейця його слід забути. І розмислити Європу.</p><p><span style=\"font-size: 1rem;\">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span><span style=\"font-size: 1rem;\">Перше, що приходить до голови, це метафора картини. Не <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip3\">“Викрадення Європи”</span>, а епічний французький <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip4\">гобелен</span>. Розміром своїм настільки великий, що його вмістить хіба що зала <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip5\">Лувру</span>. Нитки цього килиму сшивають докупи безліч клаптиків сюжетів, персональних історій, портретів, ілюструють події. Вони явно містять якісь таємні смисли. Попри свою строкатість полотно сприймається напрочуд цілісним.&nbsp;</span></p><p></p><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Якби навпроти цієї картини невідомого автора сидів <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip6\">Мішель Фуко</span>, то після годин роздивляння зображеного він би напевно сказав, що така “Європа” - це чудова, глобальна ілюстрація до його концепції <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip7\">гетеротопії</span>. <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip8\">Ролан Барт</span>, склади він компанію Фуко, міг би додати, що назву слід змінити на “Європи”. Адже вони, насправді, розглядають вельми оригінальний <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip9\">поліптих</span>. Якби до виставочної зали з гобеленом зайшов <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip10\">Джордж Стайнер</span>, то напевно <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip11\">процитував</span> би другого президента України. Походивши вздовж зображень він би тільки переконався, що все це описано в його есеї “Ідея Європи”. Приблизно те саме зробив би <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip12\">Норман Дейвіс</span>, тільки в його випадку картина ілюструвала би книгу “Європа: Історія”.</div><p></p><p></p><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<span style=\"font-size: 1rem;\">Цей процес був би нескінченним: кожен новий відвідувач знаходив би на полотні щось своє чи напрочуд близьке. Всі присутні обговорювали би роботу невідомого майстра та все нові й нові деталі, які б помічало уважне, незамилине око новоприбулого. Аж поки один з присутніх, хай це буде філософ <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip13\">Едмунд Гуссерль</span>, не замислився б над цим. І не помітив би за собою дивний факт. Як далеко би він не відходив, йому все одно не вдається повністю охопити полотно своїм зором. І як би близько він не підходив, роздивитись метр квадратний картини цілком також не виходить.</span></div><p></p><p></p><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<span style=\"font-size: 1rem;\">В цьому головна проблема сприйняття Європи. Вона занадто велика за розміром та глибока за суттю. Історія цього <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip14\">простору</span> складає близько трьох тисяч років. За цей час він докорінно змінювався й еволюціонував на рівні поняття. Античний грек, для якого “Європа” позначає західне узбережжя Егейського моря, був би дуже здивований одним лише географічним значенням цього слова сьогодні. Європа міфологізована, виведена за раціональні рамки. Вона не більша від нас, радше <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip15\">Вона понад нами</span>. Це вкрай важливо усвідомити для того, аби почати розуміти цей простір. Європейська ідентичність не створює Європу, а навпаки - <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip16\">Вона твориться нею</span>.</span></div><p></p></div>\n            <hr class=\"line\" mbr-style=\"{'width': lineLength + '%'}\">\n        </div>\n        </div>\n  \n  <!-- Annotations -->\n  \n  <div class=\"tooltip_templates\">\n    <span id=\"tooltip1\">\n      Також відомий як пісьменник <a href=\"https://uk.wikipedia.org/wiki/%D0%9B%D1%8C%D1%8E%D1%97%D1%81_%D0%9A%D0%B5%D1%80%D1%80%D0%BE%D0%BB\" target=\"_blank\">Льюїс Керрол</a><br><br>\n      <img style=\"display:block;margin:auto;\" alt=\"Lewis Carroll 1863.jpg\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Lewis_Carroll_1863.jpg/250px-Lewis_Carroll_1863.jpg\" decoding=\"async\" srcset=\"https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Lewis_Carroll_1863.jpg/375px-Lewis_Carroll_1863.jpg 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Lewis_Carroll_1863.jpg/500px-Lewis_Carroll_1863.jpg 2x\" data-file-width=\"1069\" data-file-height=\"1627\" width=\"250\" height=\"380\">\n    </span>\n    \n    <span id=\"tooltip2\">\n      Маркс (???)\n    </span>\n    \n    <span id=\"tooltip3\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%92%D0%B8%D0%BA%D1%80%D0%B0%D0%B4%D0%B5%D0%BD%D0%BD%D1%8F_%D0%84%D0%B2%D1%80%D0%BE%D0%BF%D0%B8_(%D0%A0%D0%B5%D0%BC%D0%B1%D1%80%D0%B0%D0%BD%D0%B4%D1%82)\" target=\"_blank\">Викрадення Європи</a> (нід. De roof van Europa) — картина голландського художника Рембрандта Харменса ван Рейна, що була створена в 1632 році. За основу взятий сюжет з поеми «Ідилія» давньогрецького поета, майстра буколічної поезії Мосха. Картина під інвентарним номером 95.PB.7 наразі зберігається в музеї Ґетті у Лос-Анджелесі.<br><br>\n      <img style=\"display:block;margin:auto;\" alt=\"Rembrandt Abduction of Europa.jpg\" src=\"https:////upload.wikimedia.org/wikipedia/commons/thumb/5/56/Rembrandt_Abduction_of_Europa.jpg/250px-Rembrandt_Abduction_of_Europa.jpg\" decoding=\"async\" srcset=\"https:////upload.wikimedia.org/wikipedia/commons/thumb/5/56/Rembrandt_Abduction_of_Europa.jpg/375px-Rembrandt_Abduction_of_Europa.jpg 1.5x, https:////upload.wikimedia.org/wikipedia/commons/thumb/5/56/Rembrandt_Abduction_of_Europa.jpg/500px-Rembrandt_Abduction_of_Europa.jpg 2x\" data-file-width=\"7000\" data-file-height=\"5461\" width=\"250\" height=\"195\">\n    </span>\n    \n    <span id=\"tooltip4\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%93%D0%BE%D0%B1%D0%B5%D0%BB%D0%B5%D0%BD\" target=\"_blank\">Гобелéн</a> (фр. gobelin) — один із різновидів декоративно-ужиткового мистецтва, стінний безворсовий килим із сюжетною або орнаментною композицією, витканий вручну перехресним переплетенням ниток. Гобелени виготовляють із кольорових шовкових і/або шерстяних ниток окремими частинами, які потім зшивають між собою (часто окремі колірні плями).\n    </span>\n    \n    <span id=\"tooltip5\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%9B%D1%83%D0%B2%D1%80\" target=\"_blank\">Музéй Лýвру</a> (фр. Musée du Louvre) — один з найбільших музеїв світу, розташований на правому березі Сени в першому окрузі Парижа. Музей було відкрито 1793 року під назвою Центрального музею мистецтв Республіки. \n    </span>\n    \n    <span id=\"tooltip6\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%9C%D1%96%D1%88%D0%B5%D0%BB%D1%8C_%D0%A4%D1%83%D0%BA%D0%BE\" target=\"_blank\">Поль-Мішéль Фукó </a> (фр. Paul-Michel Foucault) — французький філософ та історик ХХ ст. Мішель Фуко найбільш відомий завдяки своїм критичним дослідженням соціальних інституцій, психіатрії, медицини, наук про людину, системи тюрем, а також завдяки своїм роботам з історії сексуальності. <br><br>\n      <img style=\"display:block;margin:auto;\" alt=\"Michel Foucault 1974 Brasil.jpg\" src=\"https://upload.wikimedia.org/wikipedia/commons/7/76/Michel_Foucault_1974_Brasil.jpg\" decoding=\"async\" data-file-width=\"207\" data-file-height=\"246\" width=\"207\" height=\"246\">\n    </span>\n    \n    <span id=\"tooltip7\">\n      ???<br><br><a href=\"https://uk.wikipedia.org/wiki/%D0%93%D0%B5%D1%82%D0%B5%D1%80%D0%BE%D1%82%D0%BE%D0%BF%D1%96%D1%8F\" target=\"_blank\">Гетеротопія</a> (від грец. гетеро — інший і грец. tópos — місце) — зміна місця закладки і розвитку органу у тварин в процесі їх індивідуального розвитку — онтогенезу; один із шляхів еволюційної перебудови організму. Гетеротопія виникає внаслідок міграції клітин з одного зародкового листка в іншій, зсувів клітин в межах даного зародкового листка або вторинного зсуву органів. Термін введений німецьким дослідником Ернстом Геккелем в 1874 році для позначення порушень філогенетично зумовленої просторової послідовності стадій онтогенезу. Згодом було показано, що гетеротопія не вкладається в гекелівське трактування ценогенезу. \n    </span>\n\n\t<span id=\"tooltip8\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%A0%D0%BE%D0%BB%D0%B0%D0%BD_%D0%91%D0%B0%D1%80%D1%82\" target=\"_blank\">Рóлан Барт</a> (фр. Roland Barthes) — французький філософ, критик і теоретик семіотики, науки про знаки і символи. Один із французьких «нових критиків», представник структуралізму і постструктуралізму. сексуальності. <br><br>\n      <img style=\"display:block;margin:auto;\" alt=\"RolandBarthes.jpg\" src=\"https://upload.wikimedia.org/wikipedia/uk/thumb/7/7c/RolandBarthes.jpg/200px-RolandBarthes.jpg\" decoding=\"async\" srcset=\"https://upload.wikimedia.org/wikipedia/uk/thumb/7/7c/RolandBarthes.jpg/300px-RolandBarthes.jpg 1.5x, https://upload.wikimedia.org/wikipedia/uk/7/7c/RolandBarthes.jpg 2x\" data-file-width=\"312\" data-file-height=\"253\" width=\"200\" height=\"162\">\n    </span>\n    \n    <span id=\"tooltip9\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D0%BE%D0%BB%D1%96%D0%BF%D1%82%D0%B8%D1%85\" target=\"_blank\">Поліптих</a> — картина (зазвичай на дерев'яній основі), розділена на секції або дошки. Зокрема, диптих — двосекційний твір мистецтва, триптих — трисекційний, тетраптих або квадриптих розділений на 4 секції, пентаптих — на 5 і так далі. \n    </span>\n\n     <span id=\"tooltip10\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%94%D0%B6%D0%BE%D1%80%D0%B4%D0%B6_%D0%A1%D1%82%D0%B0%D0%B9%D0%BD%D0%B5%D1%80\" target=\"_blank\">Джордж Стайнер</a> (англ. George Steiner) — американський літературознавець, літературний критик, культуролог, філософ, есеїст, педагог та письменник. <br><br>\n      <img style=\"display:block;margin:auto;\" alt=\"George Steiner 2013 (cropped).jpg\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/George_Steiner_2013_%28cropped%29.jpg/280px-George_Steiner_2013_%28cropped%29.jpg\" decoding=\"async\" srcset=\"https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/George_Steiner_2013_%28cropped%29.jpg/420px-George_Steiner_2013_%28cropped%29.jpg 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/George_Steiner_2013_%28cropped%29.jpg/560px-George_Steiner_2013_%28cropped%29.jpg 2x\" data-file-width=\"564\" data-file-height=\"696\" width=\"280\" height=\"346\">\n    </span>\n    \n     <span id=\"tooltip11\">\n      Це ж було вже\n    </span>\n    \n    <span id=\"tooltip12\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%9D%D0%BE%D1%80%D0%BC%D0%B0%D0%BD_%D0%94%D0%B5%D0%B9%D0%B2%D1%96%D1%81\" target=\"_blank\">Нóрман Дéйвіс</a> (англ. Ivor Norman Richard Davies) — британський історик валлійського походження. Відомий як автор наукових праць з історії Польщі, Європи та Британських островів. <br><br>\n      <img style=\"display:block;margin:auto;\" alt=\"Norman Davies by Kubik 02.jpg\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Norman_Davies_by_Kubik_02.jpg/250px-Norman_Davies_by_Kubik_02.jpg\" decoding=\"async\" srcset=\"https://upload.wikimedia.org/wikipedia/commons/0/04/Norman_Davies_by_Kubik_02.jpg 1.5x\" data-file-width=\"360\" data-file-height=\"480\" width=\"250\" height=\"333\">\n    </span>\n    \n    <span id=\"tooltip13\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%95%D0%B4%D0%BC%D1%83%D0%BD%D0%B4_%D0%93%D1%83%D1%81%D1%81%D0%B5%D1%80%D0%BB%D1%8C\" target=\"_blank\">Éдмунд Ґустáв Альбрéхт Гýссерль</a> (нім. Edmund Gustav Albrecht Husserl) — німецький філософ, відомий як батько феноменології. Його робота порвала із позитивістською орієнтацією науки і філософії його часу, надаючи ваги суб'єктивному досвіду як джерелу пізнання об'єктивних феноменів. <br><br>\n      <img style=\"display:block;margin:auto;\" alt=\"Edmund Husserl 1900.jpg\" src=\"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Edmund_Husserl_1900.jpg/250px-Edmund_Husserl_1900.jpg\" decoding=\"async\" srcset=\"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Edmund_Husserl_1900.jpg/375px-Edmund_Husserl_1900.jpg 1.5x, https://upload.wikimedia.org/wikipedia/commons/8/8f/Edmund_Husserl_1900.jpg 2x\" data-file-width=\"419\" data-file-height=\"550\" width=\"250\" height=\"328\">\n    </span>\n\n    <span id=\"tooltip14\">\n      Дивись \"<span class=\"note tooltipster\" data-tooltip-content=\"#tooltip7\">Гетеротопія</span>\"\n    </span>\n    \n    <iframe id=\"tooltip15\" width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/NeQM1c-XCDc?start=223\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n    \n    <span id=\"tooltip16\">\n      Дивись \"<span class=\"note tooltipster\" data-tooltip-content=\"#tooltip2\">Буття визначає свідомість</span>\"\n    </span>\n    \n    \n\t</div>\n  \n</section>",
           "_cid": "sAiiuLtUQR",
           "_anchor": "content9-h",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 15px)",
+              "padding-bottom": "(@paddingBottom * 15px)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            "H3": {
+              "text-align": "right"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "text-align": "left"
+            }
+          },
+          "_name": "header1",
+          "_customHTML": "<section class=\"header1\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"4\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubTitle\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\">\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n        <input type=\"checkbox\" title=\"Show Arrow\" name=\"showArrow\" checked>\n\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/europemap.jpg\" parallax selected>\n            <input type=\"color\" title=\"Background Color\" value=\"#7f1933\">\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#302b24\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div class=\"container\">\n        <div class=\"row justify-content-md-center\">\n            <div class=\"mbr-white col-md-10\">\n                <h1 class=\"mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\"></h1>\n                <h3 class=\"mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showSubTitle\"><div></div></h3>\n                <p class=\"mbr-text align-center pb-3 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\"></p>\n                <div class=\"mbr-section-btn align-center\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons mbr-theme-style=\"display-4\"><a class=\"btn btn-md btn-secondary\" href=\"https://mobirise.co\" data-app-placeholder=\"Type Text\">\n                        <span class=\"mbr-iconfont mbri-file\"></span>LEARN MORE</a></div>\n            </div>\n        </div>\n    </div>\n      <div mbr-if=\"showArrow\" class=\"mbr-arrow hidden-sm-down\" aria-hidden=\"true\">\n        <a href=\"#next\">\n            <i class=\"mbri-down mbr-iconfont\"></i>\n        </a>\n    </div>\n\n</section>",
+          "_anchor": "header1-p",
+          "_isUserblock": true,
+          "_sourceTheme": "mobirise4",
+          "_cid": "sAiQxenhLV",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor",
+            ".line": {
+              "background-color": "@lineColor",
+              "color": "@lineColor",
+              "align": "center",
+              "height": "2px",
+              "margin": "0 auto"
+            },
+            ".section-text": {
+              "padding": "2rem 0",
+              "text-align": "left"
+            },
+            ".inner-container": {
+              "margin": "0 auto"
+            },
+            "@media (max-width: 768px)": {
+              ".inner-container": {
+                "width": "100% !important"
+              }
+            },
+            ".section-text DIV": {
+              "text-align": "left"
+            },
+            ".note": {
+              "color": "#d0745f",
+              "cursor": "pointer",
+              "border-bottom": "1px dotted #d0745f"
+            },
+            ".tooltip_templates": {
+              "display": "none"
+            },
+            ".tooltipster-base": {
+              "border-radius": "1px",
+              "border": "1px solid #eee",
+              "background": "#fff",
+              "color": "#222",
+              "padding": "0",
+              "font-size": "0",
+              "line-height": "0",
+              "position": "absolute",
+              "z-index": "9999999",
+              "pointer-events": "none",
+              "width": "auto",
+              "overflow": "visible"
+            },
+            ".tooltipster-base .tooltipster-content": {
+              "font": "medium \"Georgia\", serif",
+              "padding": "1em 1em 1em 1em",
+              "overflow": "hidden",
+              "border-left": "5px solid #d0745f"
+            }
+          },
+          "_name": "content9",
+          "_customHTML": "<section class=\"mbr-section article content9\" group=\"Article\">\n    \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Text Width\" name=\"innerWidth\" min=\"50\" max=\"100\" step=\"1\" value=\"100\">\n        <input type=\"range\" inline title=\"Line Width\" name=\"lineLength\" min=\"10\" max=\"100\" step=\"1\" value=\"66\">\n        <input type=\"color\" title=\"Line Color\" name=\"lineColor\" value=\"#7395a1\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#cebfaf\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n        <div class=\"inner-container\" mbr-style=\"{'width': innerWidth + '%'}\">\n            <hr class=\"line\" mbr-style=\"{'width': lineLength + '%'}\">\n            <div class=\"section-text align-center mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".section-text\" mbr-text><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"note tooltipster\" data-tooltip-content=\"#tooltip17\">Європа почалася з міфу</span>, тож секрет її розуміння криється в мові образів. Цьому простору завжди була притаманна багата символічність, що мала пояснювати його, надавати йому контекст. Він історично потребував рівноблизьких чи рівновіддалених своїм складовим ідей та образів, які б на рівні міфологічного мислення могли <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip18\">поєднати</span> його численні священні камінці в єдину мозаїку. Європа - це не ціле, <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip19\">конструкт</span>. Той <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip20\">інтертекст</span>, що його творить взаємодія пам’яті про минуле з уявленням про сьогодення. Така система існує лише внаслідок не складання, а множення своїх численних компонентів, що складають її структуру.</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"font-size: 1rem;\">Описати та зрозуміти це допоможе уявний оркестр. Якщо сто музикантів збираються на сцені й починають щось грати, то виходить какофонія. Навіть коли всі вони грають один музичний твір. Але варто з’явитись дерижеру, як струнні, духові та ударні інструменти починають утворювати поліфонії. Різні мелодії переплітається з багатоголоссям в симфонію. Магія музики полягає в тому, що для її розуміння аудиторії не потрібно бачити нот, чути кожен інструмент, знати історію написання та зміст, навіть впізнавати дирижера з солістами не обов’язково. Достатньо просто відчувати емоцію. Цей дух, що єднає все в єдиному пориві.</span></p><p></p><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style=\"font-size: 1rem;\">Не треба питати, що означає Європа, аби зрозуміти цей простір. Радше слід прислухатись до себе, які почуття викликає “<span class=\"note tooltipster\" data-tooltip-content=\"#tooltip21\">симфонія Європи</span>”? В чому її <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip22\">Geist</span>? Відповідь - у <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip23\">єднанні</span>. Не важливо, що чи кого єднає Європа. Важливо, як Вона це робить. &nbsp;</span><br></div><p></p><p></p><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Цивілізація складається з ідеології, інфраструктури, та інститутів. Завдяки цьому цивілізація здатна єднати, організовувати та трансформувати свій простір. Вона формує й реалізує смисли, творить свій міф. Але разом із цим цивілізація вельми прагматична: вона радо запозичує та адаптує, якщо має можливість “не винаходити велосипед”. Якщо почати аналізувати Європу, осмислювати її цивілізаційну сутність, то можна спіймати себе за в’язанням нескінченно детального гобелену. Це корисний та цікавий шлях, однак він заведе до глухого кута. Еллінська філософія, Римське право та Християнство  - це три базові європейські нитки, які наче <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip24\">червона, зелена і синя фарби</span>, переплітаючись формують неповторний в жодному відрізку орнамент - європейський простір. Тому для його розуміння краще не дивитись на зображення, а провести пальцями по вузликах, що тримають полотно до купи.</div><p></p><p></p><div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Які ж рапóрти переплітаючись об’єднують візерунок Європи, себто формують європейську ідентичність?</div><p></p></div>\n            <hr class=\"line\" mbr-style=\"{'width': lineLength + '%'}\">\n        </div>\n        </div>\n  \n  <!-- Annotations -->\n  \n  <div class=\"tooltip_templates\">\n    <span id=\"tooltip17\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%84%D0%B2%D1%80%D0%BE%D0%BF%D0%B0_(%D0%BC%D1%96%D1%84%D0%BE%D0%BB%D0%BE%D0%B3%D1%96%D1%8F)#%D0%92%D0%B8%D0%BA%D1%80%D0%B0%D0%B4%D0%B5%D0%BD%D0%BD%D1%8F_%D0%84%D0%B2%D1%80%D0%BE%D0%BF%D0%B8\" target=\"_blank\">Міф про викрадення Європи</a>\n    </span>\n    \n    <span id=\"tooltip18\">\n      Поєднати (???)\n    </span>\n    \n    <span id=\"tooltip19\">\n      Конструкт (???)\n    </span>\n    \n    <span id=\"tooltip20\">\n      Іитертекст (???)\n    </span>\n    \n    <iframe id=\"tooltip21\" width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/rOjHhS5MtvA\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n    \n    <span id=\"tooltip22\">\n      Geist (нім.) - Дух\n    </span>\n    \n    <span id=\"tooltip23\">\n      Єднанні (???)\n    </span>\n    \n    <span id=\"tooltip24\">\n      <a href=\"https://uk.wikipedia.org/wiki/RGB\" target=\"_blank\">RGB</a> (скорочено від англ. Red, Green, Blue — червоний, зелений, синій) — адитивна колірна модель, що описує спосіб синтезу кольору, за якою червоне, зелене та синє світло накладаються разом, змішуючись у різноманітні кольори.\n    </span>\n    \n\t</div>\n  \n</section>",
+          "_anchor": "content9-n",
+          "_isUserblock": true,
+          "_sourceTheme": "mobirise4",
+          "_cid": "sAiPCRspcY",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "& when not (@fullScreen)": {
+              "padding-top": "(@paddingTop * 15px)",
+              "padding-bottom": "(@paddingBottom * 15px)"
+            },
+            "& when (@bg-type = 'color')": {
+              "background-color": "@bg-value"
+            },
+            "& when (@bg-type = 'image')": {
+              "background-image": "url(@bg-value)"
+            },
+            "H3": {
+              "text-align": "right"
+            },
+            ".mbr-text, .mbr-section-btn": {
+              "text-align": "left"
+            }
+          },
+          "_name": "header1",
+          "_customHTML": "<section class=\"header1\" group=\"Headers\" data-bg-video=\"{{bg.type == 'video' &amp;&amp; bg.value.url}}\" mbr-class=\"{'mbr-fullscreen': fullScreen,\n                    'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"checkbox\" title=\"Full Screen\" name=\"fullScreen\">\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"4\" condition=\"fullScreen == false\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"6\" condition=\"fullScreen == false\">\n\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubTitle\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\">\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n        <input type=\"checkbox\" title=\"Show Arrow\" name=\"showArrow\" checked=\"\">\n\n        <fieldset type=\"background\" name=\"bg\" parallax=\"\">\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/europemap.jpg\" parallax=\"\" selected=\"\">\n            <input type=\"color\" title=\"Background Color\" value=\"#7f1933\">\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=36YgDDJ7XSc\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked=\"\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#302b24\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n        <input type=\"range\" inline=\"\" title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.7\" condition=\"overlay &amp;&amp; bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay &amp;&amp; bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div class=\"container\">\n        <div class=\"row justify-content-md-center\">\n            <div class=\"mbr-white col-md-10\">\n                <h1 class=\"mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style\" mbr-theme-style=\"display-1\" mbr-if=\"showTitle\"></h1>\n                <h3 class=\"mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style\" mbr-theme-style=\"display-5\" mbr-if=\"showSubTitle\"><div></div></h3>\n                <p class=\"mbr-text align-center pb-3 mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .mbr-section-btn\"></p>\n                <div class=\"mbr-section-btn align-center\" mbr-if=\"showButtons\" data-toolbar=\"-mbrBtnMove\" mbr-buttons=\"\" mbr-theme-style=\"display-4\"><a class=\"btn btn-md btn-secondary\" href=\"https://mobirise.co\" data-app-placeholder=\"Type Text\">\n                        <span class=\"mbr-iconfont mbri-file\"></span>LEARN MORE</a></div>\n            </div>\n        </div>\n    </div>\n      <div mbr-if=\"showArrow\" class=\"mbr-arrow hidden-sm-down\" aria-hidden=\"true\">\n        <a href=\"#next\">\n            <i class=\"mbri-down mbr-iconfont\"></i>\n        </a>\n    </div>\n\n</section>",
+          "_anchor": "header1-q",
+          "_isUserblock": true,
+          "_sourceTheme": "mobirise4",
+          "_cid": "sAj6WnkFtU",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": "deltapi-code-editor",
+          "_isSecondary": true,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor",
+            ".mbr-section": {
+              "text-align": "center",
+              "color": "#fff"
+            },
+            ".line": {
+              "background-color": "@lineColor",
+              "color": "@lineColor",
+              "align": "center",
+              "height": "2px",
+              "margin": "0 auto"
+            }
+          },
+          "_name": "custom-html",
+          "_customHTML": "<section mbr-id=\"_anchor\" class=\"mbr-section article content1\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#cebfaf\">\n      \t<input type=\"range\" inline title=\"Line Width\" name=\"lineLength\" min=\"10\" max=\"100\" step=\"1\" value=\"66\">\n        <input type=\"color\" title=\"Line Color\" name=\"lineColor\" value=\"#7395a1\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n      \t<hr class=\"line\" mbr-style=\"{'width': lineLength + '%'}\">\n    </div>\n</section>",
+          "_cid": "sAj80Kqa4e",
+          "_anchor": "custom-html-s",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor",
+            "& when (@reverseContent)": {
+              "@media (min-width: 992px)": {
+                ".mbr-figure": {
+                  "padding-left": "4rem"
+                }
+              },
+              "@media (max-width: 992px)": {
+                ".mbr-figure": {
+                  "padding-top": "1rem"
+                }
+              }
+            },
+            "& when not (@reverseContent)": {
+              ".media-container-row": {
+                "flex-direction": "row-reverse",
+                "-webkit-flex-direction": "row-reverse"
+              },
+              "@media (min-width: 992px)": {
+                ".mbr-figure": {
+                  "padding-right": "4rem"
+                }
+              },
+              "@media (max-width: 991px)": {
+                ".media-container-row": {
+                  "flex-wrap": "wrap-reverse",
+                  "-webkit-flex-wrap": "wrap-reverse"
+                },
+                ".mbr-figure": {
+                  "padding-bottom": "1rem"
+                }
+              }
+            },
+            ".mbr-text": {
+              "color": "#232323",
+              "text-align": "left"
+            },
+            ".note": {
+              "color": "#d0745f",
+              "cursor": "pointer",
+              "border-bottom": "1px dotted #d0745f"
+            },
+            ".tooltip_templates": {
+              "display": "none"
+            },
+            ".tooltipster-base": {
+              "border-radius": "1px",
+              "border": "1px solid #eee",
+              "background": "#fff",
+              "color": "#222",
+              "padding": "0",
+              "font-size": "0",
+              "line-height": "0",
+              "position": "absolute",
+              "z-index": "9999999",
+              "pointer-events": "none",
+              "width": "auto",
+              "overflow": "visible"
+            },
+            ".tooltipster-base .tooltipster-content": {
+              "font": "medium \"Georgia\", serif",
+              "padding": "1em 1em 1em 1em",
+              "overflow": "hidden",
+              "border-left": "5px solid #d0745f"
+            }
+          },
+          "_name": "content7",
+          "_customHTML": "<section class=\"mbr-section content7\" group=\"Article\">\n          \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->   \n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline title=\"Media Size\" name=\"mediaSize\" min=\"10\" max=\"200\" step=\"5\" value=\"80\">\n        <input type=\"range\" inline title=\"Width Content\" name=\"widthContent\" min=\"1\" max=\"4\" step=\"1\" value=\"4\">\n        <input type=\"checkbox\" title=\"Text On Right/Left\" name=\"reverseContent\" checked> \n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#cebfaf\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"col-12\" mbr-class=\"{'col-md-6': widthContent == 1, 'col-md-8': widthContent == 2, 'col-md-10': widthContent == 3, 'col-md-12': widthContent == 4}\">\n                <div class=\"media-container-row\">\n                    <div class=\"media-content\">\n                        <div class=\"mbr-section-text\">\n                            <p class=\"mbr-text align-right mb-0 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\"><b>Європу єднають монастирі</b><br><br>Середньовіччя, з якого почалася Європа, спирається на Латинське Християнство. Церква була єдиним інститутом <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip25\">Гесперії</span>, який не зазнав кризи в період падіння Імперії. Навіть навпаки, справедливо буде сказати, що на місце <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip26\">Pax Romana</span> прийшла <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip27\">Res Publica Christiana</span>. Релігія трансформувалась в цивілізацію, а храми прийняли на себе функції інших інститутів.\n<br>Середньовічний монастир виконує роль античного форуму, а єпископ - функцію голови громади. Аббатства стають хабами, що акумулюють цивілізаційний прогрес. Вони організовують бібліотеки, переписують книги та ведуть хроніки. При храмах будують школи та шпиталі. Монастирі проводять ярмарки, надають притулок паломникам та мандрівникам. Церква - це єдине, що підтримує процес комунікації в ізольованому середньовічному світі на постійній основі. \n<br>Але об’єднали християнський простір монастирі не своєю важливістю. Це зробив той зміст, який вони уособлювали. Недільні проповіді та молитви утворювали <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip28\">метанаратив</span> - пояснювали людям Христа їхню єдину історію; розповідали про великі ідеї та цінності, на яких вона заснована. Великий європейський <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip29\">собор</span> єднав мирян у Всесвіті-Церкві, яку вони розбудовували протягом століть, як фізично це робили більше шести століть зі своїм собором мешканці Кельну.</p>\n                        </div>\n                    </div>\n                    <div class=\"mbr-figure\" mbr-style=\"{'width': mediaSize + '%'}\">\n                     <img src=\"@PROJECT_PATH@/assets/images/monastery.jpg\" alt=\"Mobirise\" title>  \n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n  \n\t<!-- Annotations -->\n  \n  <div class=\"tooltip_templates\">\n    <span id=\"tooltip25\">\n      Гесперія — історична назва <a href=\"https://uk.wikipedia.org/wiki/%D0%97%D0%B0%D1%85%D1%96%D0%B4%D0%BD%D0%B0_%D0%A0%D0%B8%D0%BC%D1%81%D1%8C%D0%BA%D0%B0_%D1%96%D0%BC%D0%BF%D0%B5%D1%80%D1%96%D1%8F\" target=\"_blank\">Західної Римської імперії</a>\n    </span>\n    \n    <span id=\"tooltip26\">\n      <a href=\"https://uk.wikipedia.org/wiki/Pax_Romana\" target=\"_blank\">Pax Romana</a> («Пакс Ромáна», з лат. — «Римський мир») — довгий і відносно мирний період в історії Римської імперії та її колоній.\n    </span>\n    \n    <span id=\"tooltip27\">\n      Res Publica Christiana (???)\n    </span>\n    \n    <span id=\"tooltip28\">\n      метанаратив (???)\n    </span>\n    \n    <span id=\"tooltip29\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%A1%D0%BE%D0%B1%D0%BE%D1%80\" target=\"_blank\">Собор</a> — збори, зібрання. Первісно поняття було рівнозначне поняттям церква у греків, умма у мусульман, синагога чи кагал у євреїв і позначало просто зібрання віруючих. Слово собор відповідає грецькому слову «церква», яке споріднене таким словам як «цирк», «cirkle», які є відповідниками понять «коло», «круг» — у цьому випадку зібрання людей і одночасно форма управління (напр. козацький круг). \n    </span>\n    \n\t</div>\n  \n</section>",
+          "_cid": "sAj6Z3j6iU",
+          "_anchor": "content7-r",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": "deltapi-code-editor",
+          "_isSecondary": true,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor",
+            ".mbr-section": {
+              "text-align": "center",
+              "color": "#fff"
+            },
+            ".line": {
+              "background-color": "@lineColor",
+              "color": "@lineColor",
+              "align": "center",
+              "height": "2px",
+              "margin": "0 auto"
+            }
+          },
+          "_name": "custom-html",
+          "_customHTML": "<section mbr-id=\"_anchor\" class=\"mbr-section article content1\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#cebfaf\">\n      \t<input type=\"range\" inline=\"\" title=\"Line Width\" name=\"lineLength\" min=\"10\" max=\"100\" step=\"1\" value=\"66\">\n        <input type=\"color\" title=\"Line Color\" name=\"lineColor\" value=\"#7395a1\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n      \t<hr class=\"line\" mbr-style=\"{'width': lineLength + '%'}\">\n    </div>\n</section>",
+          "_anchor": "custom-html-t",
+          "_isUserblock": true,
+          "_sourceTheme": "mobirise4",
+          "_cid": "sAjdxLuk2v",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor",
+            "& when (@reverseContent)": {
+              "@media (min-width: 992px)": {
+                ".mbr-figure": {
+                  "padding-left": "4rem"
+                }
+              },
+              "@media (max-width: 992px)": {
+                ".mbr-figure": {
+                  "padding-top": "1rem"
+                }
+              }
+            },
+            "& when not (@reverseContent)": {
+              ".media-container-row": {
+                "flex-direction": "row-reverse",
+                "-webkit-flex-direction": "row-reverse"
+              },
+              "@media (min-width: 992px)": {
+                ".mbr-figure": {
+                  "padding-right": "4rem"
+                }
+              },
+              "@media (max-width: 991px)": {
+                ".media-container-row": {
+                  "flex-wrap": "wrap-reverse",
+                  "-webkit-flex-wrap": "wrap-reverse"
+                },
+                ".mbr-figure": {
+                  "padding-bottom": "1rem"
+                }
+              }
+            },
+            ".mbr-text": {
+              "color": "#232323",
+              "text-align": "left"
+            },
+            ".note": {
+              "color": "#d0745f",
+              "cursor": "pointer",
+              "border-bottom": "1px dotted #d0745f"
+            },
+            ".tooltip_templates": {
+              "display": "none"
+            },
+            ".tooltipster-base": {
+              "border-radius": "1px",
+              "border": "1px solid #eee",
+              "background": "#fff",
+              "color": "#222",
+              "padding": "0",
+              "font-size": "0",
+              "line-height": "0",
+              "position": "absolute",
+              "z-index": "9999999",
+              "pointer-events": "none",
+              "width": "auto",
+              "overflow": "visible"
+            },
+            ".tooltipster-base .tooltipster-content": {
+              "font": "medium \"Georgia\", serif",
+              "padding": "1em 1em 1em 1em",
+              "overflow": "hidden",
+              "border-left": "5px solid #d0745f"
+            }
+          },
+          "_name": "content7",
+          "_customHTML": "<section class=\"mbr-section content7\" group=\"Article\">\n          \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->   \n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline title=\"Media Size\" name=\"mediaSize\" min=\"10\" max=\"200\" step=\"5\" value=\"80\">\n        <input type=\"range\" inline title=\"Width Content\" name=\"widthContent\" min=\"1\" max=\"4\" step=\"1\" value=\"4\">\n        <input type=\"checkbox\" title=\"Text On Right/Left\" name=\"reverseContent\"> \n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#cebfaf\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"col-12\" mbr-class=\"{'col-md-6': widthContent == 1, 'col-md-8': widthContent == 2, 'col-md-10': widthContent == 3, 'col-md-12': widthContent == 4}\">\n                <div class=\"media-container-row\">\n                    <div class=\"media-content\">\n                        <div class=\"mbr-section-text\">\n                            <p class=\"mbr-text align-right mb-0 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\"><b>Європу єднають університети</b><br><br>    Університети з’являються в часи Високого Середньовіччя на базі церковних шкіл і кафедр при соборах. Це відбувалось в багатих містах Європи з санкції Римських Пап і Монархів. Той доробок Античності, що не міг бути використаний Церквою, став фундаментом університету. В просторі молитв зазвучав юнацькою єремією <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip30\">Gaudeamus Igitur</span>. Цей хор утворив нову нитку, яка з’єднала європейський простір. \n<br>    Перехід від <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip31\">scholae monasticae</span> до <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip32\">studium generale</span> дав можливість широким масам населення здобувати освіту. Латина отримала друге дихання й з незрозумілої більшості мови Писання стала мовою нової, спільної для всього європейського простору культури і науки. З античної та середньовічної латинської літератури постала література Європейська. Колективний розвиток, в єдиному контексті й дискурсі, призвели до систематизації поширення знань. &nbsp;&nbsp;<br></p>\n                        </div>\n                    </div>\n                    <div class=\"mbr-figure\" mbr-style=\"{'width': mediaSize + '%'}\">\n                     <img src=\"@PROJECT_PATH@/assets/images/university.jpg\" alt=\"Mobirise\" title>  \n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n  \n\t<!-- Annotations -->\n  \n  <div class=\"tooltip_templates\">\n    \n    <span id=\"tooltip30\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%93%D0%B0%D1%83%D0%B4%D0%B5%D0%B0%D0%BC%D1%83%D1%81\" target=\"_blank\">Гаудеáмус</a> (лат. gaudeāmus — веселімося) — середньовічна студентська пісня, студентський гімн.<br><br>\n      <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/A8-FzgQo15M\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n    </span>\n    \n    <span id=\"tooltip31\">\n      scholae monasticae (???)\n    </span>\n    \n    <span id=\"tooltip32\">\n      studium generale (???)\n    </span>\n    \n\t</div>\n  \n</section>",
+          "_anchor": "content7-u",
+          "_isUserblock": true,
+          "_sourceTheme": "mobirise4",
+          "_cid": "sAjdBmqC85",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": "deltapi-code-editor",
+          "_isSecondary": true,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor",
+            ".mbr-section": {
+              "text-align": "center",
+              "color": "#fff"
+            },
+            ".line": {
+              "background-color": "@lineColor",
+              "color": "@lineColor",
+              "align": "center",
+              "height": "2px",
+              "margin": "0 auto"
+            }
+          },
+          "_name": "custom-html",
+          "_customHTML": "<section mbr-id=\"_anchor\" class=\"mbr-section article content1\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#cebfaf\">\n      \t<input type=\"range\" inline=\"\" title=\"Line Width\" name=\"lineLength\" min=\"10\" max=\"100\" step=\"1\" value=\"66\">\n        <input type=\"color\" title=\"Line Color\" name=\"lineColor\" value=\"#7395a1\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n      \t<hr class=\"line\" mbr-style=\"{'width': lineLength + '%'}\">\n    </div>\n</section>",
+          "_anchor": "custom-html-v",
+          "_isUserblock": true,
+          "_sourceTheme": "mobirise4",
+          "_cid": "sAjgBFWaDV",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor",
+            "& when (@reverseContent)": {
+              "@media (min-width: 992px)": {
+                ".mbr-figure": {
+                  "padding-left": "4rem"
+                }
+              },
+              "@media (max-width: 992px)": {
+                ".mbr-figure": {
+                  "padding-top": "1rem"
+                }
+              }
+            },
+            "& when not (@reverseContent)": {
+              ".media-container-row": {
+                "flex-direction": "row-reverse",
+                "-webkit-flex-direction": "row-reverse"
+              },
+              "@media (min-width: 992px)": {
+                ".mbr-figure": {
+                  "padding-right": "4rem"
+                }
+              },
+              "@media (max-width: 991px)": {
+                ".media-container-row": {
+                  "flex-wrap": "wrap-reverse",
+                  "-webkit-flex-wrap": "wrap-reverse"
+                },
+                ".mbr-figure": {
+                  "padding-bottom": "1rem"
+                }
+              }
+            },
+            ".mbr-text": {
+              "color": "#232323",
+              "text-align": "left"
+            },
+            ".note": {
+              "color": "#d0745f",
+              "cursor": "pointer",
+              "border-bottom": "1px dotted #d0745f"
+            },
+            ".tooltip_templates": {
+              "display": "none"
+            },
+            ".tooltipster-base": {
+              "border-radius": "1px",
+              "border": "1px solid #eee",
+              "background": "#fff",
+              "color": "#222",
+              "padding": "0",
+              "font-size": "0",
+              "line-height": "0",
+              "position": "absolute",
+              "z-index": "9999999",
+              "pointer-events": "none",
+              "width": "auto",
+              "overflow": "visible"
+            },
+            ".tooltipster-base .tooltipster-content": {
+              "font": "medium \"Georgia\", serif",
+              "padding": "1em 1em 1em 1em",
+              "overflow": "hidden",
+              "border-left": "5px solid #d0745f"
+            }
+          },
+          "_name": "content7",
+          "_customHTML": "<section class=\"mbr-section content7\" group=\"Article\">\n          \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->   \n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline title=\"Media Size\" name=\"mediaSize\" min=\"10\" max=\"200\" step=\"5\" value=\"80\">\n        <input type=\"range\" inline title=\"Width Content\" name=\"widthContent\" min=\"1\" max=\"4\" step=\"1\" value=\"4\">\n        <input type=\"checkbox\" title=\"Text On Right/Left\" name=\"reverseContent\" checked> \n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#cebfaf\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"col-12\" mbr-class=\"{'col-md-6': widthContent == 1, 'col-md-8': widthContent == 2, 'col-md-10': widthContent == 3, 'col-md-12': widthContent == 4}\">\n                <div class=\"media-container-row\">\n                    <div class=\"media-content\">\n                        <div class=\"mbr-section-text\">\n                            <p class=\"mbr-text align-right mb-0 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\"><b>Європу єднають революції</b><br><br>Уніфікація європейського простору призводила до прискорення процесів в ньому. Урбанізація, поширення єдиного стандарту освіти та спільної для всіх системи цінностей призводили для ускладнення суспільства. Нові ідеї починали конфліктувати із старими порядками. Будь-яке протистояння швидко виходило на рівень єдиного простору. <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip33\">Революція</span> не тільки кардинально змінювала європейський простір, вона єднала Європу собою чи проти себе. \n<br><span class=\"note tooltipster\" data-tooltip-content=\"#tooltip34\">Комунальна революція</span> зробила європейські міста вільними, <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip35\">Реформація</span> - зруйнувала гомогенний католицький світ та сприяла утворенню європейських націй. <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip36\">Французька Революція</span> створила сучасну державу, <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip37\">Весна Народів</span> же зробила її національною. Врешті, спроба <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip38\">комуністичної революції</span> призвела до розділення Європи, а <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip39\">Падіння Берлінської муру</span> й <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip40\">Кольорові революції</span> - знов з’єднали її у спільний простір демократії та свободи в рамках <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip41\">регіонального наддержавного проекту</span>.<br></p>\n                        </div>\n                    </div>\n                    <div class=\"mbr-figure\" mbr-style=\"{'width': mediaSize + '%'}\">\n                     <img src=\"@PROJECT_PATH@/assets/images/revolution.jpg\" alt=\"Mobirise\" title>  \n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n  \n\t<!-- Annotations -->\n  \n  <div class=\"tooltip_templates\">\n    \n    <span id=\"tooltip33\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D1%96%D1%8F\" target=\"_blank\">Революція</a> (від лат. revolutio — переворот, змінення, кардинальна зміна) — швидка радикальна зміна всієї самостійної органічної або неорганічної системи. Прикладом зазначеної системи є суспільство, людина, наукові знання, засоби виробництва, окреме тіло. \n    </span>\n    \n    <span id=\"tooltip34\">\n      Комунальна революція (???)\n    </span>\n    \n    <span id=\"tooltip35\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%A0%D0%B5%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%86%D1%96%D1%8F\" target=\"_blank\">Реформáція</a> (від лат. reformátio — перетворення, виправлення) — церковно-релігійні й суспільно-політичні течії, спрямовані проти католицької церкви, на повернення до біблійних джерел християнства. Набували форми релігійної боротьби проти католицької церкви і папської влади. \n    </span>\n    \n    <span id=\"tooltip36\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%A4%D1%80%D0%B0%D0%BD%D1%86%D1%83%D0%B7%D1%8C%D0%BA%D0%B0_%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D1%96%D1%8F\" target=\"_blank\">Французька революція</a> (фр. Révolution française [ʁevɔlysjɔ̃ fʁɑ̃sɛːz]) почалася у травні 1789 року, коли Старий порядок було скинуто, а замість нього встановлено конституційну монархію. У вересні 1792 року монархію було замінено на Першу французьку республіку, а в січні 1793 було страчено короля Людовика XVI. Відтак почався період політичної нестабільності, що завершився призначенням Наполеона першим консулом в листопаді 1799. Цю дату прийнято вважати кінцем революції. \n    </span>\n    \n    <span id=\"tooltip37\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%A0%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D1%96%D1%97_1848%E2%80%941849_%D1%80%D0%BE%D0%BA%D1%96%D0%B2\" target=\"_blank\">Революції 1848—1849 років</a> (відома під назвою «Весна націй» та «Народна Весна») — низка революцій, що сталася в Європі у 1848 році. Весна Націй досі залишається наймасштабнішою у європейській історії хвилею революцій, проте у зв'язку з політичними реакціями, у всіх випадках влада була відновлена протягом року.\n    </span>\n    \n    <span id=\"tooltip38\">\n      комуністичної революції (???)\n    </span>\n    \n    <span id=\"tooltip39\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%9F%D0%B0%D0%B4%D1%96%D0%BD%D0%BD%D1%8F_%D0%91%D0%B5%D1%80%D0%BB%D1%96%D0%BD%D1%81%D1%8C%D0%BA%D0%BE%D0%B3%D0%BE_%D0%BC%D1%83%D1%80%D1%83\" target=\"_blank\">Падіння Берлíнського муру</a> або Берлінської стіни (нім. Mauerfall), 9 листопада 1989 року стало поворотною подією у світовій історії, сталося падіння Берлінського муру як символа залізної завіси. \n    </span>\n    \n    <span id=\"tooltip40\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%9A%D0%BE%D0%BB%D1%8C%D0%BE%D1%80%D0%BE%D0%B2%D0%B0_%D1%80%D0%B5%D0%B2%D0%BE%D0%BB%D1%8E%D1%86%D1%96%D1%8F\" target=\"_blank\">«Кольорова революція»</a> (також Оксамитова революція) — поняття, що застосовується для позначення так званих «ненасильницьких революцій», а також деяких широко відомих масових ненасильницьких акцій протесту. В наслідок кольорових революцій відбулася зміна політичних режимів у низці постсоціалістичних країн (на території колишнього СРСР і Східної Європи) та країн арабського світу. На поточний момент для терміна «Кольорова революція» не існує загальноприйнятого і чіткого визначення. \n    </span>\n    \n    <span id=\"tooltip41\">\n      регіонального наддержавного проекту / ЄС (???)\n    </span>\n     \n\t</div>\n  \n</section>",
+          "_anchor": "content7-w",
+          "_isUserblock": true,
+          "_sourceTheme": "mobirise4",
+          "_cid": "sAjgCWVPsv",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": "deltapi-code-editor",
+          "_isSecondary": true,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor",
+            ".mbr-section": {
+              "text-align": "center",
+              "color": "#fff"
+            },
+            ".line": {
+              "background-color": "@lineColor",
+              "color": "@lineColor",
+              "align": "center",
+              "height": "2px",
+              "margin": "0 auto"
+            }
+          },
+          "_name": "custom-html",
+          "_customHTML": "<section mbr-id=\"_anchor\" class=\"mbr-section article content1\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#cebfaf\">\n      \t<input type=\"range\" inline=\"\" title=\"Line Width\" name=\"lineLength\" min=\"10\" max=\"100\" step=\"1\" value=\"66\">\n        <input type=\"color\" title=\"Line Color\" name=\"lineColor\" value=\"#7395a1\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n      \t<hr class=\"line\" mbr-style=\"{'width': lineLength + '%'}\">\n    </div>\n</section>",
+          "_anchor": "custom-html-x",
+          "_isUserblock": true,
+          "_sourceTheme": "mobirise4",
+          "_cid": "sAjmUSfvYU",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor",
+            "& when (@reverseContent)": {
+              "@media (min-width: 992px)": {
+                ".mbr-figure": {
+                  "padding-left": "4rem"
+                }
+              },
+              "@media (max-width: 992px)": {
+                ".mbr-figure": {
+                  "padding-top": "1rem"
+                }
+              }
+            },
+            "& when not (@reverseContent)": {
+              ".media-container-row": {
+                "flex-direction": "row-reverse",
+                "-webkit-flex-direction": "row-reverse"
+              },
+              "@media (min-width: 992px)": {
+                ".mbr-figure": {
+                  "padding-right": "4rem"
+                }
+              },
+              "@media (max-width: 991px)": {
+                ".media-container-row": {
+                  "flex-wrap": "wrap-reverse",
+                  "-webkit-flex-wrap": "wrap-reverse"
+                },
+                ".mbr-figure": {
+                  "padding-bottom": "1rem"
+                }
+              }
+            },
+            ".mbr-text": {
+              "color": "#232323",
+              "text-align": "left"
+            },
+            ".note": {
+              "color": "#d0745f",
+              "cursor": "pointer",
+              "border-bottom": "1px dotted #d0745f"
+            },
+            ".tooltip_templates": {
+              "display": "none"
+            },
+            ".tooltipster-base": {
+              "border-radius": "1px",
+              "border": "1px solid #eee",
+              "background": "#fff",
+              "color": "#222",
+              "padding": "0",
+              "font-size": "0",
+              "line-height": "0",
+              "position": "absolute",
+              "z-index": "9999999",
+              "pointer-events": "none",
+              "width": "auto",
+              "overflow": "visible"
+            },
+            ".tooltipster-base .tooltipster-content": {
+              "font": "medium \"Georgia\", serif",
+              "padding": "1em 1em 1em 1em",
+              "overflow": "hidden",
+              "border-left": "5px solid #d0745f"
+            }
+          },
+          "_name": "content7",
+          "_customHTML": "<section class=\"mbr-section content7\" group=\"Article\">\n          \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->   \n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline title=\"Media Size\" name=\"mediaSize\" min=\"10\" max=\"200\" step=\"5\" value=\"80\">\n        <input type=\"range\" inline title=\"Width Content\" name=\"widthContent\" min=\"1\" max=\"4\" step=\"1\" value=\"4\">\n        <input type=\"checkbox\" title=\"Text On Right/Left\" name=\"reverseContent\"> \n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#cebfaf\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"col-12\" mbr-class=\"{'col-md-6': widthContent == 1, 'col-md-8': widthContent == 2, 'col-md-10': widthContent == 3, 'col-md-12': widthContent == 4}\">\n                <div class=\"media-container-row\">\n                    <div class=\"media-content\">\n                        <div class=\"mbr-section-text\">\n                            <p class=\"mbr-text align-right mb-0 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\"><b>Європу єднають мости</b><br><br>Образ мосту - це символ єднання. Це споруда, що сполучає різні береги річки чи краї прірви. Соціальна й економічна інфраструктура, що забезпечує комфортне існування. Тому мости зображені на банкнотах <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip42\">євро</span>. В європейській символіці міст - це також діалог, можливість знайти порозуміння, домовитись про спільне процвітання. Він уособлює ідею кооперації, навколо якої було створено Європейський Союз. \n<br>Європа - це простір річок: Рейн, Дунай, Дніпро, Ельба, Вісла, Дністер, Волга, Дон. Ріки - це прокладені природою дороги, легкі шляхи для торгівлі й мандр. А мости через них - це уособлення вибору людей, що їх будують. Кожна така конструкція має свою історію та ідею. Через кожен міст проходить шлях, який кудись веде. І за кожним мостом хтось дбає, бо розуміє його важливість. &nbsp;<br></p>\n                        </div>\n                    </div>\n                    <div class=\"mbr-figure\" mbr-style=\"{'width': mediaSize + '%'}\">\n                     <img src=\"@PROJECT_PATH@/assets/images/bridges.jpg\" alt=\"Mobirise\" title>  \n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n  \n\t<!-- Annotations -->\n  \n  <div class=\"tooltip_templates\">\n    \n    <span id=\"tooltip42\">\n      <a href=\"https://uk.wikipedia.org/wiki/%D0%84%D0%B2%D1%80%D0%BE\" target=\"_blank\">Євро</a> (латинською Euro, грецькою Ευρώ, кирилицею Евро) — офіційна валюта 19 з 27 країн Європейського Союзу, відомих як Єврозона. Використовується також в 6 інших європейських державах, загалом є рідною для понад 343 мільйонів європейців.\n    </span>\n \n\t</div>\n  \n</section>",
+          "_anchor": "content7-y",
+          "_isUserblock": true,
+          "_sourceTheme": "mobirise4",
+          "_cid": "sAjmVR3SBk",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": "deltapi-code-editor",
+          "_isSecondary": true,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor",
+            ".mbr-section": {
+              "text-align": "center",
+              "color": "#fff"
+            },
+            ".line": {
+              "background-color": "@lineColor",
+              "color": "@lineColor",
+              "align": "center",
+              "height": "2px",
+              "margin": "0 auto"
+            }
+          },
+          "_name": "custom-html",
+          "_customHTML": "<section mbr-id=\"_anchor\" class=\"mbr-section article content1\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline=\"\" title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline=\"\" title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"0\">\n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#cebfaf\">\n      \t<input type=\"range\" inline=\"\" title=\"Line Width\" name=\"lineLength\" min=\"10\" max=\"100\" step=\"1\" value=\"66\">\n        <input type=\"color\" title=\"Line Color\" name=\"lineColor\" value=\"#7395a1\">\n    <!-- End block parameters -->\n    </mbr-parameters> \n\n    <div class=\"container\">\n      \t<hr class=\"line\" mbr-style=\"{'width': lineLength + '%'}\">\n    </div>\n</section>",
+          "_anchor": "custom-html-z",
+          "_isUserblock": true,
+          "_sourceTheme": "mobirise4",
+          "_cid": "sAjoMw9lYM",
+          "_protectedParams": [],
+          "_global": false,
+          "_once": false,
+          "_params": {}
+        },
+        {
+          "alias": false,
+          "_styles": {
+            "padding-top": "(@paddingTop * 15px)",
+            "padding-bottom": "(@paddingBottom * 15px)",
+            "background-color": "@bgColor",
+            "& when (@reverseContent)": {
+              "@media (min-width: 992px)": {
+                ".mbr-figure": {
+                  "padding-left": "4rem"
+                }
+              },
+              "@media (max-width: 992px)": {
+                ".mbr-figure": {
+                  "padding-top": "1rem"
+                }
+              }
+            },
+            "& when not (@reverseContent)": {
+              ".media-container-row": {
+                "flex-direction": "row-reverse",
+                "-webkit-flex-direction": "row-reverse"
+              },
+              "@media (min-width: 992px)": {
+                ".mbr-figure": {
+                  "padding-right": "4rem"
+                }
+              },
+              "@media (max-width: 991px)": {
+                ".media-container-row": {
+                  "flex-wrap": "wrap-reverse",
+                  "-webkit-flex-wrap": "wrap-reverse"
+                },
+                ".mbr-figure": {
+                  "padding-bottom": "1rem"
+                }
+              }
+            },
+            ".mbr-text": {
+              "color": "#232323",
+              "text-align": "left"
+            },
+            ".note": {
+              "color": "#d0745f",
+              "cursor": "pointer",
+              "border-bottom": "1px dotted #d0745f"
+            },
+            ".tooltip_templates": {
+              "display": "none"
+            },
+            ".tooltipster-base": {
+              "border-radius": "1px",
+              "border": "1px solid #eee",
+              "background": "#fff",
+              "color": "#222",
+              "padding": "0",
+              "font-size": "0",
+              "line-height": "0",
+              "position": "absolute",
+              "z-index": "9999999",
+              "pointer-events": "none",
+              "width": "auto",
+              "overflow": "visible"
+            },
+            ".tooltipster-base .tooltipster-content": {
+              "font": "medium \"Georgia\", serif",
+              "padding": "1em 1em 1em 1em",
+              "overflow": "hidden",
+              "border-left": "5px solid #d0745f"
+            }
+          },
+          "_name": "content7",
+          "_customHTML": "<section class=\"mbr-section content7\" group=\"Article\">\n          \n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->   \n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"4\">\n        <input type=\"range\" inline title=\"Media Size\" name=\"mediaSize\" min=\"10\" max=\"200\" step=\"5\" value=\"80\">\n        <input type=\"range\" inline title=\"Width Content\" name=\"widthContent\" min=\"1\" max=\"4\" step=\"1\" value=\"4\">\n        <input type=\"checkbox\" title=\"Text On Right/Left\" name=\"reverseContent\" checked> \n        <input type=\"color\" title=\"Background Color\" name=\"bgColor\" value=\"#cebfaf\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"container\">\n        <div class=\"media-container-row\">\n            <div class=\"col-12\" mbr-class=\"{'col-md-6': widthContent == 1, 'col-md-8': widthContent == 2, 'col-md-10': widthContent == 3, 'col-md-12': widthContent == 4}\">\n                <div class=\"media-container-row\">\n                    <div class=\"media-content\">\n                        <div class=\"mbr-section-text\">\n                            <p class=\"mbr-text align-right mb-0 mbr-fonts-style\" mbr-theme-style=\"display-7\" data-app-selector=\".mbr-text\"><b>Європу єднають солідарність та дисципліна</b><br><br>    Проект Європейського Союзу розроблено і реалізовано християнськими демократами, які прийшли до влади в країнах Європи у другій половині двадцятого сторіччя. Їхня ідеологія ґрунтується на поняттях <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip43\">discipline</span> і <span class=\"note tooltipster\" data-tooltip-content=\"#tooltip43\">solidarity</span>, а також відповідальності особистості перед соціумом. Гуманізм та Християнство об’єднали Західну Європу зі Східною в спільний динамічний й політичний простір, але процес його закріплення ще не завершено. Відбувається процес пошуку додаткових ниточок, які б могли створити нові вузли у Європейському візерунку.<br></p>\n                        </div>\n                    </div>\n                    <div class=\"mbr-figure\" mbr-style=\"{'width': mediaSize + '%'}\">\n                     <img src=\"@PROJECT_PATH@/assets/images/solidarity.webp\" alt=\"Mobirise\" title>  \n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n  \n\t<!-- Annotations -->\n  \n  <div class=\"tooltip_templates\">\n    \n    <span id=\"tooltip43\">\n      discipline (???)\n    </span>\n    \n    <span id=\"tooltip44\">\n      solidarity (???)\n    </span>\n \n\t</div>\n  \n</section>",
+          "_anchor": "content7-10",
+          "_isUserblock": true,
+          "_sourceTheme": "mobirise4",
+          "_cid": "sAjoNeyVvj",
           "_protectedParams": [],
           "_global": false,
           "_once": false,
